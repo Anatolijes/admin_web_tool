@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+        <meta charset="UTF-8">
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet"
+              media="screen">
+        <title>{{ the_title }}</title>
+    {% endblock %}
+</head>
+
+<nav>
+    {% block navbar %}
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{{ url_for('home') }}">Home!</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="{{ url_for('create_post') }}">Add new post</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        {% if current_user.is_authenticated %}
+                        <li><a href="{{ url_for('logout') }}">logout</a></li>
+                        {% else %}
+                        <li><a href="{{ url_for('registration') }}">registration</a></li>
+
+                        <li><a href="{{ url_for('login') }}">login</a></li>
+                        {% endif %}
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    {% endblock %}
+</nav>
+<body>
+{% block body %}
+
+{% endblock %}
+
+
+</body>
+
+</html>

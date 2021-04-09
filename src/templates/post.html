@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body %}
+    <article>
+        <div>
+            <div>
+
+                <div>
+                    <a href="{{ url_for('update_post', post_id=post.id) }}">Update</a>
+                    <a href="{{ url_for('delete_post', post_id=post.id) }}">Delete</a>
+                </div>
+            </div>
+            <div>
+                <small>{{ post.timestamp.strftime('%Y-%m-%d') }}</small>
+                <h2 class="article-title">{{ post.title }}</h2>
+                <p class="article-content">{{ post.content }}</p>
+            </div>
+        </div>
+    </article>
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
+         aria-hidden="true">
+
+
+    </div>
+{% endblock body %}

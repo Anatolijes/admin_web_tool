@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="content-section">
+        <h1>Sign In</h1>
+        <form action="" method="POST">
+            <p>
+                {{ form.username.label() }}<br>
+                {{ form.username() }}
+            </p>
+            <p>
+                {{ form.password.label() }}<br>
+                {{ form.password() }}
+            </p>
+            <div class="from-check">
+            <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+            <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+        </form>
+    </div>
+
+{% endblock %}

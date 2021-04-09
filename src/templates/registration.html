@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <h1>Registration from</h1>
+    <form action="" method="POST">
+        <p>username {{ form.username() }}</p>
+
+        <p>password {{ form.password() }}</p>
+        <p>repeat  {{ form.confirm() }}</p>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">sigh up</button>
+        </div>
+    </form>
+
+{% endblock body %}
